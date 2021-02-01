@@ -1,0 +1,289 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1038\cocoasubrtf350
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww9000\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ql\qnatural\pardirnatural
+
+\f0\fs24 \cf0 -- phpMyAdmin SQL Dump\
+-- version 3.3.10.1\
+-- http://www.phpmyadmin.net\
+--\
+-- Host: localhost\
+-- Generation Time: Jul 05, 2011 at 12:06 PM\
+-- Server version: 5.0.92\
+-- PHP Version: 5.2.9\
+\
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";\
+\
+--\
+-- Database: `ncapsule_crystalis`\
+--\
+\
+-- --------------------------------------------------------\
+\
+--\
+-- Table structure for table `Categories`\
+--\
+\
+CREATE TABLE IF NOT EXISTS `Categories` (\
+  `cat_id` tinyint(4) NOT NULL auto_increment,\
+  `cat_name` varchar(100) collate utf8_unicode_ci NOT NULL default '',\
+  `cat_desc` text collate utf8_unicode_ci,\
+  PRIMARY KEY  (`cat_id`)\
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=8 ;\
+\
+--\
+-- Dumping data for table `Categories`\
+--\
+\
+INSERT INTO `Categories` (`cat_id`, `cat_name`, `cat_desc`) VALUES\
+(1, 'Photograph', 'An item taken by a camera.'),\
+(2, 'Drawing', 'An item created either through hand or computerized methods.'),\
+(3, 'Animation', 'A moving object.'),\
+(4, 'Website', 'A html version of product information and visual information utilizing layout methods.'),\
+(5, 'Graphic Design', 'An item drawn by hand or computerized methods that illustrates items rather than evokes emotion.'),\
+(6, 'Manipulated Image', 'Photoshop and other mediums used to manipulate and existing photo and illustration'),\
+(7, 'Graphic Design Layout', 'Layouts created through computerized software for print production.');\
+\
+-- --------------------------------------------------------\
+\
+--\
+-- Table structure for table `Categories_Items`\
+--\
+\
+CREATE TABLE IF NOT EXISTS `Categories_Items` (\
+  `cat_id` tinyint(4) NOT NULL default '0',\
+  `item_id` tinyint(4) NOT NULL default '0',\
+  PRIMARY KEY  (`cat_id`,`item_id`)\
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='onetoone table';\
+\
+--\
+-- Dumping data for table `Categories_Items`\
+--\
+\
+INSERT INTO `Categories_Items` (`cat_id`, `item_id`) VALUES\
+(1, 6),\
+(1, 9),\
+(1, 10),\
+(1, 11),\
+(1, 12),\
+(1, 13),\
+(1, 14),\
+(1, 15),\
+(1, 16),\
+(1, 37),\
+(1, 38),\
+(1, 39),\
+(2, 1),\
+(2, 2),\
+(2, 3),\
+(2, 4),\
+(2, 5),\
+(3, 7),\
+(3, 8),\
+(3, 22),\
+(3, 23),\
+(3, 24),\
+(3, 25),\
+(3, 26),\
+(4, 27),\
+(4, 28),\
+(4, 30),\
+(4, 31),\
+(4, 32),\
+(4, 33),\
+(4, 34),\
+(4, 35),\
+(4, 36),\
+(5, 1),\
+(5, 2),\
+(5, 17),\
+(5, 18),\
+(5, 19),\
+(5, 20),\
+(5, 21),\
+(5, 29),\
+(6, 6),\
+(6, 9),\
+(6, 10);\
+\
+-- --------------------------------------------------------\
+\
+--\
+-- Table structure for table `Items`\
+--\
+\
+CREATE TABLE IF NOT EXISTS `Items` (\
+  `item_id` tinyint(4) NOT NULL auto_increment,\
+  `Item_name` varchar(100) collate utf8_unicode_ci NOT NULL default '',\
+  `item_title` varchar(100) collate utf8_unicode_ci NOT NULL default '',\
+  `item_purpose` text collate utf8_unicode_ci NOT NULL,\
+  `item_notes` text collate utf8_unicode_ci,\
+  `item_link` varchar(250) collate utf8_unicode_ci NOT NULL default '',\
+  `item_web` varchar(250) collate utf8_unicode_ci default NULL,\
+  `item_page` varchar(250) collate utf8_unicode_ci default NULL,\
+  PRIMARY KEY  (`item_id`)\
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='Items used in website - art/illustration/photos etc' AUTO_INCREMENT=40 ;\
+\
+--\
+-- Dumping data for table `Items`\
+--\
+\
+INSERT INTO `Items` (`item_id`, `Item_name`, `item_title`, `item_purpose`, `item_notes`, `item_link`, `item_web`, `item_page`) VALUES\
+(1, 'Teapot', 'Queen Teapot', 'Creative imagination. The animated curves lent to a drawing. Drawing of a Teapot I saw potential for an animated character. ', 'Nicely drawn, This image will be pushed farther into an animation soon to come.', 'drawing/queenpot.jpg', NULL, NULL),\
+(2, 'Squash', 'Squash', 'Experimenting with printmaking processes.', 'Neat stylized image through eliminating for white space', 'drawing/squash.jpg', NULL, NULL),\
+(3, 'Rig', 'Empire Rig', ' Drawing of Rig for Raydan Manufacturing for Global Petroleum Show Calgary To promote Unique configurations for vocational vehicles in the oilfield application - ', 'Well Received. Won the respect of the engineering staff! Suspension provided by engineering in autocad', 'drawing/EmpireRigSM.jpg', NULL, NULL),\
+(4, 'Crane', 'Crane', ' To promote Raydan Manufacturing Suspensions utilized in the crane industry sector. Use for a Crane magazine with a global audience \\r\\n  ', 'Well received. Again the engineering staff saw my potential! -  Autocad file provided by engineering of the Raydan Suspension.\\r\\n', 'drawing/craneSM.jpg', NULL, NULL),\
+(5, 'Building Renditions', 'Delta Rendition', 'To redraw an existing rendition in order to create textural blue siding, kept going on the rest for the fun of it also so that the resolution could be increased for poster requirements.\\r\\n  ', 'It was well created and received ', 'drawing/DeltaRenditionSM.jpg', NULL, NULL),\
+(6, 'Photo Manipulation', '2nd Face', 'Original image -To create images of myself for CD Cover Resume to display my abilities. This piece was taken further as a postcard style promotional piece for marketing myself', 'Good general display of layer manipulation, Text manipulation, blending, and opacity.', 'photography/2ndFaceSM.jpg', NULL, NULL),\
+(7, 'CD Cover', 'Resume CD', 'Original image -To create images of myself for CD Cover Resume to display my abilities.  ', 'Good general display of layer manipulation, Text manipulation, blending, and opacity', 'flash/Resume.jpg', 'http://www.e-steem.net/media.php?iid=7', 'http://www.e-steem.net/images/flash/Resume.swf'),\
+(8, 'CD Cover', '2nd Face CD', 'Original image -To create images of myself for CD Cover Resume to display my abilities. - ', 'Good general display of layer manipulation, Text manipulation, blending, and opacity', 'flash/CDCover.jpg', 'http://www.e-steem.net/media.php?iid=8', 'http://www.e-steem.net/images/flash/CDCover.swf'),\
+(9, 'Tree Photo', 'Tree Roots', 'Original image -To create to display abilities. Made to a be Poster.', 'Great display of layer content manipulation, text manipulation, Positive response.', 'photography/treeSM.jpg', NULL, NULL),\
+(10, 'Grain Photo', 'Grain Elevator', 'To display photography skills and manipulate color intensity correction. To display photoshop skills.', 'Positive response. Clean image. Color enhancement and sky replacement is believable to the eyes', 'photography/GrainElevator.jpg', NULL, NULL),\
+(11, 'Truck Photos', '2 guys on truck', 'to photography the workers and the vehicle of a Mack which is undergoing testing of the Raydan Suspension for use in Marketing materials.\\r\\n ', 'Piece used in the Raydan Review May 2006. Notice: the sparkle on the mag!!', 'photography/2GuyswTruckSM.jpg', NULL, NULL),\
+(12, 'Truck Photos', 'Lights', 'Looking for challenging angles of interest as well as patterns for promotional products through the lines in the light itself etc.', ' love the emotional involvement of the viewer in this piece. Its eye is staring at the viewers eye. Hence the Challenge is met', 'photography/lightSm.jpg', NULL, NULL),\
+(13, 'Truck Photos', 'Truck', 'Photos of Trucks for promotional products and packaging,', 'Nice angles of product - Programs: Digital Camera', 'photography/truck.jpg', NULL, NULL),\
+(14, 'Truck Photos', 'Truck Angle', 'Promoting Trucks modified at Raydan Manufacturing by documenting and generating interesting visual shots of their products for marketing materials ', 'Very well done. Angles and composition generate eye catching photography that maintains the viewers interest to learn more', 'photography/AngleTruckSM.jpg', NULL, NULL),\
+(15, 'Old Abstracts', 'StoveTop', 'Feeling compelled to photograph this past. Particularly the sights seen in prairie country of abandoned material goods \\r\\n\\r\\n \\r\\n', 'Some interesting designs and moods are created when photographing such a subject These pieces will hopefully become a table top book of memories. A second desire is to draw the leaf style patterns of Art Nouveau', 'photography/StoveSideSM.jpg', NULL, NULL),\
+(16, 'Old Abstracts', 'Abstract Car', 'what interests me in these style photos are the strong angles and perceptions gathered from sucn a subject. Again my desires as an artist are forseen by exploring emotional connection to such powerful dynamics.', 'The intensity of such abstraction is well achieved. ', 'photography/abstractcarSM.jpg', NULL, NULL),\
+(17, 'Brochure', 'Hair Cutters', 'to create a more visually pleasing brochure of the services offered at this salon in a way that speaks Hair', 'The salon liked it. The angle cut on the front for the address to show through was a final touch to symbolize "cutting" hair.', 'brochures/HairBrochure.jpg', NULL, NULL),\
+(18, 'Brochure', 'Empire Brochure', 'a brochure intended for the Global Petroleum Show in Calgary representing what Raydan offers in Modifications for Heavy duty oilfield vocational truck applications.', 'Very well received. ', 'brochures/RaydanBrch.jpg', NULL, NULL),\
+(19, 'Mail Out', 'Canyon Creek Toyota', 'Mail out for reminding customers of the car care packages available', 'They loved it!', 'brochures/toyota_sample.jpg', NULL, NULL),\
+(20, 'Newspaper', 'Raydan Review', '(8 Page Newspaper) - Bi annual ventures and articles that promote Raydan Suspensions, Modification Center,and Service Shops.', 'Well received, full color print, quality images.', 'newspaper/RRspread.jpg', NULL, NULL),\
+(21, 'Morgex Products', 'Open House', 'Invitation to a Christmas party Grand Opening of a new location', 'Well Appreciated especially slanted MG', 'brochures/OHouseInvite.jpg', NULL, NULL),\
+(22, 'Animations', 'Birds', 'To demonstrate Cartoon abilities and the creative processes', 'Neat simple concept', 'flash/birds.jpg', 'http://www.e-steem.net/media.php?iid=22', 'http://www.e-steem.net/images/flash/birds.swf'),\
+(23, 'Animations', 'Lips', 'To demonstrate Animation abilities and the creative processes and approaches to a project', 'More than I expected. Using lipstick a scanner I combined a realistic floating animation that looks genuinely real', 'flash/lips.jpg', 'http://www.e-steem.net/media.php?iid=23', 'http://www.e-steem.net/images/flash/lips.swf'),\
+(24, 'Animations', ' Planet', 'Class project: illustration using masks for the illusion of the planet rotating', 'Successful rotations convincing the viewer of movement', 'flash/planet.jpg', 'http://www.e-steem.net/media.php?iid=24', 'http://www.e-steem.net/images/flash/planet.swf'),\
+(25, 'Animations', 'Splash of Me', 'Crystal-is splash page to demonstrate web abilities, interactivities and the creative processes', 'Neat simple concept', 'flash/5ofmeTHM.jpg', 'http://www.e-steem.net/splash5ofme.html', NULL),\
+(26, 'Animations', 'Chrystallis Splash', 'Chrystallis splash page to demonstrate web abilities, interactivities and the creative processes', 'Neat simple concept', 'flash/crystalisHead.jpg', 'http://www.e-steem.net/header/Header.html', NULL),\
+(27, 'Web Development', 'Raydan Manufacturing', 'To provide a website that has clear and consise navigation for ease of use by customers.', 'On Proof. Unique and functions well.', 'web/No2NewsRelease.jpg', 'http://www.e-steem.net/media.php?iid=27', NULL),\
+(28, 'Web Development', 'Chrystallis', 'To provide an interesting navigational site utilizing pictures as links', 'On Proof. Unique and functions well.', 'web/crystalisHead.jpg', 'http://www.e-steem.net/media.php?iid=28', NULL),\
+(29, 'Morgex Products', 'Golf Brochure', 'Promoting Morgex as the one stop insurance broker through the colf concept of enjoying life', 'Well Appreciated, Kudos were given to myself for the graphic design and I was requested for further designs 2 other brochures were created in the same concept one auto and one savings bonds', 'brochures/GolfBr.jpg', NULL, NULL),\
+(30, 'Website', 'cSharpAX', 'C# lab research assignment for AJAX or another technology to implement with C# in order to offer a more robust project.', 'Received great feedback and good marks for the bono work put into the discussion and website.', 'web/csharpax.png', 'http://www.e-steem.net/cSharpAX/', NULL),\
+(31, 'Website', 'Steppe', 'Project for a lawyer client. Undergoing changes and need for a web presence. ', 'In iteration stages. Client is happy with the work.', 'web/steppe.png', 'http://www.e-steem.net/Steppe/', NULL),\
+(32, 'Website', 'artssheets', 'Pilot c# programming project and the web phenomonon of facebook in a tiny lab in Edmonton, brought me to develop this little niche of artistic connections.', 'Layout is very clean, focuses on GUI user interactivity and the pl layer. Functionality with that being the focus.', 'web/artsheets.png', 'http://www.artssheets.com', NULL),\
+(33, 'Website', 'Boreal Forest Edukit', 'People of the Boreal Forest Edukit developed by the Heritage Community Foundation. This Edukit is intended to provide a range of information and activities that highlight and promote an understanding of the People who live and work in the Boreal Forest region of Alberta.', 'Different style of edukit with different connections and interactivities.', 'web/boreal.png', 'http://www.edukits.ca/boreal/', NULL),\
+(34, 'Website', 'Alberta''s Real Estate Heritage', 'Alberta''s Real Estate Heritage website is an educational multimedia website showcasing information about all aspects of the real estate industry - its history, people, and landmark buildings.', 'Albertasource.ca received over 1.5 million unique visitors and over 3.8 million website visits of up to 30 minutes duration', 'web/realestate.png', 'http://www.albertasource.ca/realestate/', NULL),\
+(35, 'website', 'Alaska Highway', 'To many people the Alaska Highway is an image\'97a thin line that connects two dots on a map. For some, it is an essential transportation route, linking towns, cities and communities across northern Canada.', 'The Art Gallery of Alberta (formerly the Edmonton Art Gallery) and the Heritage Community Foundation are proud to make this dynamic Web site available via the World Wide Web as part of the Alberta Online Encyclopedia\'97www.albertasource.ca. Albertasource.ca received over 1.5 million unique visitors and over 3.8 million website visits of up to 30 minutes duration', 'web/alaska.png', 'http://alaskahighway.albertasource.ca/', NULL),\
+(36, 'Website', 'University of Alberta Centennial', 'In 2008 the University of Alberta will celebrate 100 years of service \'96 educating the leaders of tomorrow, responding to the evolving needs of our community, and addressing issues of immediate relevance to the lives of people in Alberta, Canada, and around the world. It has been a century of pioneering accomplishment and innovation; a century worth celebrating. ', 'This very special website, created through the partnership of the University of Alberta Learning Services and the Heritage Community Foundation, is an online celebration of the University of Alberta and its unique place in Alberta\'92s history.', 'web/uofa.png', 'http://www.ualbertacentennial.ca/', NULL),\
+(37, 'Photograph', 'My Toes Have Travelled - Hollywood', 'An experiment with photoshop combining images for a realistic creation. I love my toes and had a pedicure done. While I shot these feet, the concept was suggested to me that I make them travel around the world!!', 'Realistic representation of where my feet have been. ', 'photography/feetinholliwood2.jpg', NULL, NULL),\
+(38, 'Photograph', 'My Toes Have Travelled - To the Moon1', 'An experiment with photoshop combining images for a realistic creation. I love my toes and had a pedicure done. While I shot these feet, the concept was suggested to me that I make them travel around the world!!', 'Realistic representation of where my feet have been. ', 'photography/moonfeet2.jpg', NULL, NULL),\
+(39, 'Photograph', 'My Toes Have Travelled - To the Moon2', 'An experiment with photoshop combining images for a realistic creation. I love my toes and had a pedicure done. While I shot these feet, the concept was suggested to me that I make them travel around the world!!', 'Realistic representation of where my feet have been. ', 'photography/moonfeet3.jpg', NULL, NULL);\
+\
+-- --------------------------------------------------------\
+\
+--\
+-- Table structure for table `Medium`\
+--\
+\
+CREATE TABLE IF NOT EXISTS `Medium` (\
+  `med_id` tinyint(4) NOT NULL auto_increment,\
+  `med_name` varchar(100) collate utf8_unicode_ci NOT NULL default '',\
+  `med_desc` text collate utf8_unicode_ci,\
+  PRIMARY KEY  (`med_id`)\
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=15 ;\
+\
+--\
+-- Dumping data for table `Medium`\
+--\
+\
+INSERT INTO `Medium` (`med_id`, `med_name`, `med_desc`) VALUES\
+(1, 'Photoshop', 'Images / photos manipulated and or designed in Adobe Photoshop'),\
+(2, 'Illustrator', 'Images / photos manipulated and or designed in Adobe Illustrator'),\
+(3, 'digital camera', 'Images / photos taken with cameras'),\
+(4, 'SLR Camera', 'Images / photos taken with cameras.'),\
+(5, 'Flash', 'Images / drawing / animations produced through  computerized tools by the program Adobe Flash.'),\
+(6, 'Print Ink', 'Press style ink for printmaking'),\
+(7, 'InDesign', 'Computerized program for layout of print products. Adobe product'),\
+(8, 'QuarkXpress', 'Computerized program for layout of print products.'),\
+(9, 'ImageReady', 'Computerized program for layout of print products. Adobe product packaged with Photoshop'),\
+(10, 'Dreamweaver', 'Computerized program for layout of web products. Adobe product'),\
+(11, 'Indian Ink', 'Ink used in oriental drawing techniques, waterbased.'),\
+(12, 'Conte', 'charcoal / pastel like substance in stick form flow of pastel and dryness of charcoal. A stronger linear gain than charcoal.'),\
+(13, 'Charcoal', 'stick form of charcoal.'),\
+(14, 'Giff Builder', 'Animation software');\
+\
+-- --------------------------------------------------------\
+\
+--\
+-- Table structure for table `Medium_Items`\
+--\
+\
+CREATE TABLE IF NOT EXISTS `Medium_Items` (\
+  `med_id` tinyint(4) NOT NULL default '0',\
+  `item_id` tinyint(4) NOT NULL default '0',\
+  PRIMARY KEY  (`med_id`,`item_id`)\
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='onetoone table';\
+\
+--\
+-- Dumping data for table `Medium_Items`\
+--\
+\
+INSERT INTO `Medium_Items` (`med_id`, `item_id`) VALUES\
+(1, 6),\
+(1, 7),\
+(1, 8),\
+(1, 9),\
+(1, 10),\
+(1, 13),\
+(1, 15),\
+(1, 18),\
+(1, 23),\
+(1, 25),\
+(1, 26),\
+(1, 27),\
+(1, 28),\
+(2, 3),\
+(2, 5),\
+(2, 17),\
+(2, 18),\
+(2, 29),\
+(3, 6),\
+(3, 7),\
+(3, 8),\
+(3, 9),\
+(3, 10),\
+(3, 11),\
+(3, 12),\
+(3, 14),\
+(3, 16),\
+(3, 27),\
+(3, 28),\
+(4, 25),\
+(5, 7),\
+(5, 8),\
+(5, 22),\
+(5, 23),\
+(5, 24),\
+(5, 25),\
+(6, 2),\
+(7, 18),\
+(7, 29),\
+(10, 27),\
+(10, 28),\
+(12, 1),\
+(13, 1),\
+(14, 26);\
+\
+-- --------------------------------------------------------\
+\
+--\
+-- Table structure for table `userTable`\
+--\
+\
+CREATE TABLE IF NOT EXISTS `userTable` (\
+  `username` varchar(50) collate utf8_unicode_ci NOT NULL default '',\
+  `password` varchar(250) collate utf8_unicode_ci NOT NULL default '',\
+  `f_name` varchar(25) collate utf8_unicode_ci NOT NULL default '0',\
+  `l_name` varchar(25) collate utf8_unicode_ci NOT NULL default '0',\
+  `email` varchar(175) collate utf8_unicode_ci NOT NULL default '',\
+  PRIMARY KEY  (`username`)\
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;\
+\
+--\
+-- Dumping data for table `userTable`\
+--\
+\
+INSERT INTO `userTable` (`username`, `password`, `f_name`, `l_name`, `email`) VALUES\
+('crystal-is', 'e800d05aeedd854574a5ad22ed339ffe', '25', 'Shops', '');\
+}
