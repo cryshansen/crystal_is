@@ -1,0 +1,106 @@
+/* CSS Document */
+
+body{
+	background: #CC6600 url(../images/mybackground.jpg) fixed no-repeat;
+	color:#FFA500;
+	margin:0px;
+	padding:0px;
+	width:750px;
+
+}
+strong{
+	color:#FFA;
+}
+
+.outer_content{
+	margin:0px  auto 0px 75px;
+	padding:0px;
+	border:#993300 thin;
+	position:static;
+
+	
+}
+
+/*------------------------------------- Top Nav --------------------------------------------*/
+.top_nav{
+	width:100%;
+	text-align:right;
+	margin:0px;
+	padding:2px;
+	padding-right: 15px;
+	background-color:#CC6600;
+}
+
+.top_nav ul li{
+	display:inline;
+	text-decoration:none;
+}
+.top_nav a {
+	text-decoration:none;
+	color: #FFA500;
+}
+
+/* ------------------------------------ Body/Content -----------------------------------------*/
+.txt_body{
+	font-family:verdana, Arial, Helvetica, sans-serif;
+	font-size:.7em;
+	width:auto;
+	height:100%;
+	margin: 20px 10px 10px 175px;
+	padding: 0px 8px;
+	color:#FFCC33;/*not liking this color much yet*/
+	opacity:.5;
+	background-color:#CC6600;
+	
+}
+txt_body h1{
+ margin-top:10px;
+
+}
+.txt_body p strong{
+	color:#FFA;
+}
+.txt_body a{
+	color:#FFA;
+	text-decoration:none;
+	font-weight:bold;
+}
+.txt_body_inside{
+	padding: 5px 10px;
+	opacity:1;
+}
+#contact{
+	opacity:1;
+}
+.footer {
+	clear:both;
+	height:200px;
+}
+/*------------------------------------ Bottom Nav -----------------------------------------*/
+.bottom_hor{
+	width:100%;
+	margin:0px;
+	padding:0px;
+	text-align:right;
+	padding-right: 15px;
+	background-color:#CC6600;
+}
+.bottom_hor ul li{
+	text-decoration:none;
+	display:inline;
+	margin:0px;
+	padding:0px;
+}
+.bottom_hor a{
+	text-decoration:none;
+	color:#ffa500;
+	margin:0px;
+	padding:2px 0px 5px;
+}
+.copyright{
+	margin:10px  auto 0px 75px;
+	padding:0px;
+	font-size: .85em;
+	text-align:right;
+	text-decoration:underline;
+}

@@ -1,0 +1,108 @@
+/* CSS Document */
+
+body{
+	background-color:#CC6600;
+	 color:#FFA500;
+	/*text-align:center;*/
+	margin:0px;
+	padding:0px;
+	font-Size: .7em;
+    font-family:verdana, Arial, Helvetica, sans-serif;
+	width:750px;
+
+}
+strong{
+color:#FFA;
+}
+
+
+/*------------------------------------- Top Nav --------------------------------------------*/
+.top_nav{
+width:100%;
+height:35px;
+margin-left:20px;
+
+}
+.topHorizontal{
+	width:250px;
+	height:25px;
+	padding:0px;
+	margin:50px 0px 0px 400px;/*right 3rd bottom 4th is left*/
+}
+.topHorizontal ul li{
+display:inline;
+text-decoration:none;
+
+}
+.topHorizontal a{
+text-decoration:none;
+color: #FFA500;
+}
+/* ------------------------------------ Body/Content -----------------------------------------*/
+.splash{
+	width: 556px;
+	height:410px;
+	background-image: url(../images/splash5ofme_01.gif); /*url(../oldsite/Pixofme1.gif); /*url(../images/5ofmeBKGD.jpg);*/
+	background-repeat: repeat-y;/*  no-repeat;*/
+	margin-left:70px;
+	padding:10px;
+	font-family:verdana, Arial, Helvetica, sans-serif;
+	font-size:.7em;
+}
+.middle_con{
+	width:525px;
+	margin: 0px 0px 25px 25px;
+	padding: 0px;
+	font-family:Geneva, Arial, Helvetica, sans-serif;
+	font-size: 1.9em;
+}
+.middle_con strong{
+	color:  #FFA500;
+}
+.middle_title{
+	width: 120px;
+	margin:0px;
+	padding:0px;
+	float:left;
+
+
+}
+.middle_txt{
+	font-family:verdana, Arial, Helvetica, sans-serif;
+	font-size:.7em;
+	width:auto;
+	margin: 20px 10px 10px 175px;
+	padding: 0px 2px;
+	color:#FFCC33;/*not liking this color much yet*/
+}
+.middle_txt p strong{
+	color:#FFA;
+}
+.middle_txt a{
+	color:#FFA;
+	text-decoration:none;
+	font-weight:bold;
+
+}
+
+/*------------------------------------ Bottom Nav -----------------------------------------*/
+.bottom{
+	width:100%;
+	height:35px;
+	margin-left:20px;
+}
+.bottom_hor{
+	width:400px;
+	height:25px;
+	padding:0px;
+	margin:10px 0px 0px 300px;
+}
+.bottom_hor ul li{
+	text-decoration:none;
+	display:inline;
+}
+.bottom_hor a{
+	text-decoration:none;
+	color:#ffa500;
+
+}
